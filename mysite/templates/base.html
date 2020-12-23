@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+<!--    block:块，预留空间,其他页面引用时可自动填充-->
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+    <div>
+        <a href="{% url 'home' %}">
+        <h3>个人博客网站</h3>
+    </a>
+    </div>
+    <hr>
+    {% block content %}{% endblock %}
+</body>
+</html>

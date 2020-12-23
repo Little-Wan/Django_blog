@@ -1,19 +1,16 @@
-<!DOCTYPE html>
-<html lang="zh-cn">
-<head>
-    <meta charset="UTF-8">
-    <title>{{ blog_type.type_name }}</title>
-</head>
-<body>
-    <div>
-        <a href="{% url 'home' %}">
-        <h3>个人博客网站</h3>
-    </a>
-    </div>
-    <hr>
+{% extends 'base.html' %}
+<!--extend: 引用公共页面，用于模板嵌套-->
+
+<!--页面标题-->
+{% block title %}
+    {{ blog_type.type_name }}
+{% endblock %}
+
+<!--页面内容-->
+{% block content %}
     <p>{{ blog_type.type_name }}</p>
     {% for blog in blogs %}
-{#        url解析#}
+<!--        url解析-->
         <a href="{% url 'blog_detail' blog.pk %}">
             <h3>{{ blog.title }}</h3>
         </a>
@@ -22,5 +19,4 @@
         <p>--暂无内容，请带后续！--</p>
     {% endfor %}
     <p>一共有{{ blogs|length }}篇博客</p>
-</body>
-</html>
+{% endblock %}
