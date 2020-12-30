@@ -2,19 +2,7 @@
     margin: 0px;
     padding: 0px;
 }
-div.nav {
-    background: #eee;
-    border-bottom: 1px solid #ccc;
-    padding: 5px 10px;
-}
-/*去除导航栏字的下划线*/
-div.nav a{
-    text-decoration: none;
-    color: black;
-    padding: 5px 10px;
-}
-/*设置导航栏页面显示为一行*/
-div.nav a.logo {
-    display: inline-block;
-    font-size: 120% ;
+/*去除导航条在顶部对标题的影响*/
+body {
+    margin-top: 70px!important;
 }
