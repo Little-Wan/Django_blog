@@ -5,6 +5,7 @@ from django.shortcuts import render_to_response,get_object_or_404
 def blog_list(request):
     context = {}
     context['blogs'] = Blog.objects.all()
+    context['blog_types'] = BlogType.objects.all()
     return render_to_response("blog/blog_list.html",context)
 
 def blog_detail(request, blog_pk):

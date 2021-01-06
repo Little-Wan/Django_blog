@@ -1,0 +1,15 @@
+ul.blog-types {
+    list-style-type: none;
+}
+/*最后一个元素不应用以下css样式*/
+div.blog:not(:last-child) {
+    margin-bottom: 2em;
+    padding-bottom: 1em;
+    border-bottom: 1px solid #eee;
+}
+div.blog h3 {
+    margin-top: 0.5em;
+}
+div.blog p.blog-info {
+    margin-bottom: 0;
+}
