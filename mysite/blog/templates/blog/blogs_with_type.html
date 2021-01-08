@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% extends 'blog/blog_list.html' %}
 <!--extend: 引用公共页面，用于模板嵌套-->
 
 <!--页面标题-->
@@ -6,19 +6,9 @@
     {{ blog_type.type_name }}
 {% endblock %}
 
-{% block nav_blog_active %}active{% endblock %}
-
-<!--页面内容-->
-{% block content %}
-    <p>{{ blog_type.type_name }}</p>
-    {% for blog in blogs %}
-<!--        url解析-->
-        <a href="{% url 'blog_detail' blog.pk %}">
-            <h3>{{ blog.title }}</h3>
-        </a>
-        <p>{{ blog.content|truncatechars:30 }}</p>
-    {% empty %}
-        <p>--暂无内容，请带后续！--</p>
-    {% endfor %}
-    <p>一共有{{ blogs|length }}篇博客</p>
+{% block blog_list_title %}
+    分类：{{ blog_type.type_name }}
+    (一共有{{ blogs|length }}篇博客)
+    <a href="{% url 'blog_list' %}">查看全部分类</a>
 {% endblock %}
+
